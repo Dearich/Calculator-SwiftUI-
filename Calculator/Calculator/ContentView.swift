@@ -109,26 +109,26 @@ struct ContentView: View {
             isTypingNumber = true
         }
     }
-
+    
     
     private func operandTapped(_ operand: String) {
         isTypingNumber = false
         guard let firstNumber1 = Double(calculatorText) else { return }
         firstNumber = firstNumber1
         self.operand = operand
-
+        
     }
-
+    
     
     private func calculate() {
         isTypingNumber = false
         var result  = 0.0
         var doubleResult = 0.0
-       
+        
         guard let secondNumber1 = Double(calculatorText) else { return }
         secondNumber = secondNumber1
-
-
+        
+        
         if operand == "+" {
             result = firstNumber + secondNumber
         } else if operand == "-" {
@@ -138,6 +138,8 @@ struct ContentView: View {
         }else if operand == "÷" {
             guard secondNumber != 0 else { return }
             doubleResult = Double(firstNumber) / Double(secondNumber)
+        }else if operand == "%" {
+            result = Double(firstNumber) / 100.0
         }
         if operand == "÷"{
             calculatorText = "\(doubleResult)"
@@ -145,30 +147,39 @@ struct ContentView: View {
             calculatorText = "\(result)"
         }
         
+        
+        
     }
     
     
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             Color.black.edgesIgnoringSafeArea(.all)
-
+            
             VStack(spacing: 12) {
-
+                
                 HStack{
                     Spacer()
                     Text(envText.displayText).foregroundColor(.white)
                         .font(.system(size: 64))
                 }.padding()
-
-                ForEach(buttonArray, id: \.self) { (row) in
+                
+                ForEach(buttonArray, id: \.self) {  (row) in
                     HStack{
-                        ForEach(row, id: \.self) {  (button) in
-
+                        ForEach(row, id: \.self) { (button) in
+                            
                             Button(action: {
                                 
                                 switch button {
                                 case .plus,.minus,.divide, .multiply:
                                     self.operandTapped(button.title)
+                                case.persent:
+                                    self.operandTapped(button.title)
+                                    self.calculate()
+                                case .plusMinus:
+                                    if self.calculatorText != "0"{
+                                        self.calculatorText.insert("-", at: self.calculatorText.startIndex )
+                                    }
                                 case .equals:
                                     if self.calculatorText != "0"{
                                         self.calculate()
@@ -182,6 +193,7 @@ struct ContentView: View {
                                     self.envText.displayText = self.calculatorText
                                     self.firstNumber = 0
                                     self.secondNumber = 0
+                                    
                                 case .dot:
                                     if self.calculatorText == "0"{
                                         self.calculatorText.append(".")
@@ -195,33 +207,30 @@ struct ContentView: View {
                                         if indicator{
                                             self.calculatorText.append(".")
                                         }
-                                           
-                                        }
-                                    
+                                    }
                                 default:
                                     self.digitTapped(button.title)
                                 }
                                 self.envText.displayText = self.calculatorText
-
+                                
                             }) {
+                                
                                 Text(button.title)
                                     .font(.system(size: 32))
                                     .frame(width: self.buttonSize(button: button), height: (UIScreen.main.bounds.width - 5 * 12 ) / 4)
-//                                    .rotationEffect(Angle(degrees: -45.0))
+                                    .rotationEffect(Angle(degrees: -45.0))
                                     .foregroundColor(button.textColor)
                                     .background(button.backgroundColor)
                                     .cornerRadius(self.buttonSize(button: button))
-
+                                
                             }
-
                         }
                     }
                 }
-
             }.padding(.bottom)
         }
     }
-//    размер кнопок всегда пропорционален экрану
+    //    размер кнопок всегда пропорционален экрану
     func buttonSize(button: ButtonsType) -> CGFloat {
         if button == .zero {
             return ((UIScreen.main.bounds.width - 4 * 12 ) / 4) * 2
