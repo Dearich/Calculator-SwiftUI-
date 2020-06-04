@@ -14,6 +14,10 @@
 		153ABBB02487910E00A11A67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153ABBAF2487910E00A11A67 /* Assets.xcassets */; };
 		153ABBB32487910E00A11A67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153ABBB22487910E00A11A67 /* Preview Assets.xcassets */; };
 		153ABBB62487910E00A11A67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 153ABBB42487910E00A11A67 /* LaunchScreen.storyboard */; };
+		15C41F7A2488E06B00F83372 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C41F792488E06B00F83372 /* ButtonType.swift */; };
+		15C41F7C2488E0E500F83372 /* SomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C41F7B2488E0E500F83372 /* SomeStoryboard.storyboard */; };
+		15C41F802488EB7D00F83372 /* CostomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C41F7F2488EB7D00F83372 /* CostomButton.swift */; };
+		15C41F822488FB3400F83372 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C41F812488FB3400F83372 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		153ABBB22487910E00A11A67 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		153ABBB52487910E00A11A67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		153ABBB72487910E00A11A67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15C41F792488E06B00F83372 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
+		15C41F7B2488E0E500F83372 /* SomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SomeStoryboard.storyboard; sourceTree = "<group>"; };
+		15C41F7F2488EB7D00F83372 /* CostomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostomButton.swift; sourceTree = "<group>"; };
+		15C41F812488FB3400F83372 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 				153ABBB72487910E00A11A67 /* Info.plist */,
 				153ABBAA2487910B00A11A67 /* Calculator.xcdatamodeld */,
 				153ABBB12487910E00A11A67 /* Preview Content */,
+				15C41F792488E06B00F83372 /* ButtonType.swift */,
+				15C41F7B2488E0E500F83372 /* SomeStoryboard.storyboard */,
+				15C41F7F2488EB7D00F83372 /* CostomButton.swift */,
+				15C41F812488FB3400F83372 /* ViewController.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -137,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				153ABBB62487910E00A11A67 /* LaunchScreen.storyboard in Resources */,
+				15C41F7C2488E0E500F83372 /* SomeStoryboard.storyboard in Resources */,
 				153ABBB32487910E00A11A67 /* Preview Assets.xcassets in Resources */,
 				153ABBB02487910E00A11A67 /* Assets.xcassets in Resources */,
 			);
@@ -149,8 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15C41F7A2488E06B00F83372 /* ButtonType.swift in Sources */,
 				153ABBA72487910B00A11A67 /* AppDelegate.swift in Sources */,
+				15C41F802488EB7D00F83372 /* CostomButton.swift in Sources */,
 				153ABBA92487910B00A11A67 /* SceneDelegate.swift in Sources */,
+				15C41F822488FB3400F83372 /* ViewController.swift in Sources */,
 				153ABBAE2487910B00A11A67 /* ContentView.swift in Sources */,
 				153ABBAC2487910B00A11A67 /* Calculator.xcdatamodeld in Sources */,
 			);
